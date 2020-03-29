@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $("#ngaysinh").datepicker({
+                dateFormat: "dd/mm/yy"
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="col-5">
+    <div class="container">
+        <h2>Form Dang Ky</h2>
+        <form th:action="@{/dangky}" method="post" th:object="${khachhang}">
+            <div class="form-group">
+                <label for="hoten">Họ và Tên :</label>
+                <p th:if="${#fields.hasErrors('hoTen')}" th:errors = "*{hoTen}" class="text-danger"></p>
+                <input type="text" class="form-control" id="hoten"  name="hoten" th:field="*{hoTen}">
+            </div>
+
+            <div class="form-group">
+                <label for="ngaysinh">Ngày Sinh:</label>
+                <input type="text" class="form-control" id="ngaysinh"  name="ngaysinh" th:field="*{ngaySinh}" />
+            </div>
+
+            <div class="form-group">
+                <label for="soCMND">Số CMND:</label>
+                <p th:if="${#fields.hasErrors('soCMND')}" th:errors = "*{soCMND}" class="text-danger"></p>
+                <input type="text" class="form-control" id="soCMND"  name="soCMND" th:field="*{soCMND}">
+            </div>
+
+            <div class="form-group">
+                <label for="soDT">Số Điện Thoại :</label>
+                <p th:if="${#fields.hasErrors('soDT')}" th:errors = "*{soDT}" class="text-danger"></p>
+                <input type="text" class="form-control" id="soDT"  name="soDT" th:field="*{soDT}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <p th:if="${#fields.hasErrors('email')}" th:errors = "*{email}" class="text-danger"></p>
+                <input type="text" class="form-control" id="email"  name="email" th:field="*{email}">
+            </div>
+
+            <div class="form-group">
+                <label for="diachi">Địa Chỉ:</label>
+                <p th:if="${#fields.hasErrors('diaChi')}" th:errors = "*{diaChi}" class="text-danger"></p>
+                <input type="text" class="form-control" id="diachi"  name="diachi" th:field="*{diaChi}">
+            </div>
+
+            <div class="form-group">
+                <label >Loại khách:</label>
+                <select th:field="*{loaiKhach}">
+                    <option th:each="p: ${listLoaiKhach}" th:value="${p.idLoaiKhach}" th:text="${p.tenLoaiKhach}"></option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

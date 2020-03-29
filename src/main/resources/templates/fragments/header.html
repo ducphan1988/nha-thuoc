@@ -1,0 +1,99 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="header">
+     <!--Start header fragments -->
+    <!--        Menu-->
+    <div class="container-fluid" style="">
+        <div class="row" style="background-color: #f2eef9; height: 70px">
+            <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                <img th:src="@{/imageWeb/logoFurama.png}" style="height: 50px">
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="#">DS Yêu Thích</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="#">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="#">Chính Sách</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Mail-->
+    <div class="container-fluid">
+        <div class="row slider" style="height: 570px">
+            <div class="offset-1 col-5 d-flex flex-column justify-content-center align-items-center"
+                 style="margin-bottom: 30px">
+                <h1 class="text-white">
+                    Fumara Da Nang
+                </h1>
+                <hr>
+                <h4 class="text-white text-center">
+                    Tận hưởng kỳ nghỉ của bạn tại khu nghỉ dưỡng cao cấp bậc nhất Việt Nam
+                </h4>
+                <hr>
+                <p class="text-white">
+                    Luôn đứng đầu danh sách những khu resort đắt đỏ và có dịch vụ cao cấp, Furama Danang chắc chắn
+                    là điểm đến mà nhiều du khách luôn hằng ao ước.
+                    Ở đây, du khách có thể thoái mải tận hượng không gian riêng tư tràn ngập thiên nhiên và cách xa
+                    những tiếng ồn ào của thành phố.
+                </p>
+                <hr>
+                <a class="btn-lg btn-warning text-decoration-none" href="#">Đăng Nhập
+                </a>
+            </div>
+            <div class="offset-1 col-5 d-flex flex-column justify-content-center align-items-center">
+                <form action="#" method="post"
+                      style="width: 500px; height: 450px; background-color:#f4f7f4; border-radius: 20px;"
+                      class="d-flex flex-column justify-content-center align-items-center mr-5">
+                    <div class="form-group">
+                        <h4 class="text-warning font-weight-bold">ĐĂNG KÝ NGAY</h4>
+                    </div>
+
+                    <div class="form-group w-75 d-flex justify-content-around">
+                        <input style="width: 250px" class="form-control" type="text" placeholder="Họ Tên"
+                               name="name">
+                    </div>
+
+                    <div class="form-group w-75 d-flex justify-content-around">
+                        <input style="width: 250px" class="form-control" type="text" placeholder="Ngày Sinh"
+                               name="dateOfBirth">
+                    </div>
+
+                    <div class="form-group w-75 d-flex justify-content-around">
+                        <input style="width: 250px" class="form-control" type="text" placeholder="Số CMND"
+                               name="identityCardNumber">
+                    </div>
+
+                    <div class="form-group w-75 d-flex justify-content-around">
+                        <input style="width: 250px" class="form-control" type="text" placeholder="Số Thẻ Tín Dụng"
+                               name="creditCardNumber">
+                    </div>
+
+                    <div class="form-group w-75 d-flex justify-content-around">
+                        <input style="width: 250px" class="form-control" type="text" placeholder="Mật Khẩu"
+                               name="password">
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <input type="submit" class="btn-lg btn-warning text-decoration-none" value="Đăng Ký">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   	<!--End header fragments -->
+</th:block>
+</html>

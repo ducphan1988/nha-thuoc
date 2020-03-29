@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+          integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/home.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <!--Start Page -->
+    <div>
+       <div>
+            <!--Start header -->
+                   <th:block th:replace="fragments/header :: header"/>
+            <!--End header -->
+            <!--Start main -->
+                   <main data-v-70a48b9f="">
+                    <!--Start breadcrumb -->
+                        <th:block th:replace="fragments/breadcrumb :: breadcrumb"/>
+                     <!--End breadcrumb -->
+                     <!--Start content -->
+                          <th:block layout:fragment="content"/>
+                       <!--End content -->
+                  </main>
+              <!--End main -->
+       </div>
+       <!--Start footer -->
+           <th:block th:replace="fragments/footer :: footer"/>
+       <!--End footer -->
+    </div>
+    <!--End Page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+</html>

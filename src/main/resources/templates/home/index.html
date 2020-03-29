@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+          integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/home.css}">
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+    <!--List Service-->
+    <div class="container pt-4">
+        <div class="row d-flex justify-content-between">
+            <h3 class="">Danh Sách Dịch Vụ</h3>
+            <a class="btn btn-outline-warning" href="">Xem tất cả</a>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-3 d-flex flex-column justify-content-center align-items-center mb-5"
+                 th:each=" dichvu : ${listdichvu}">
+                <div class="card" style="width:250px">
+                    <img class="card-img-top" style="height: 150px"
+                         src="https://fantasea.vn/wp-content/uploads/2017/10/The-Ocean-Villas-%C4%90%C3%A0-N%E1%BA%B5ng-1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title text-center" th:text="${dichvu.getTenDichVu()}"></h4>
+                        <p class="card-text text-center" th:text="${dichvu.getDienTichSuDung() + 'm2'}"></p>
+                        <p class="card-text text-center font-weight-bold" th:text="${#numbers.formatDecimal(dichvu.getChiPhiThue(),0,'COMMA',0, 'POINT')} + ' VND'"></p>
+                       <div>
+                           <a th:href="@{'/dichvu/' + ${dichvu.getIdDichVu()}}">Chi Tiết</a>
+                           <a th:href="@{'/booking/' + ${dichvu.getIdDichVu()}}">Booking</a>
+                           <a th:href="@{'/favorite/' + ${dichvu.getIdDichVu()}}">Favorite</a>
+                       </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
